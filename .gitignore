@@ -1,0 +1,8 @@
+.vscode/
+*.class
+.idea/
+*.iml
+*.txt
+
+## MACOS ##
+.DS_Store
