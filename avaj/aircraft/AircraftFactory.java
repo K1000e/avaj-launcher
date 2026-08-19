@@ -1,5 +1,6 @@
 package aircraft;
 
+import exceptions.InvalidAircraftException;
 import simulator.Coordinates;
 
 public final class AircraftFactory {
@@ -13,12 +14,12 @@ public final class AircraftFactory {
         return INSTANCE;
     }
 
-    public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates){
+    public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates) throws InvalidAircraftException {
         return switch (p_type) {
             case "Balloon" -> new Balloon(nextId++, p_name, p_coordinates);
             case "Helicopter" -> new Helicopter(nextId++, p_name, p_coordinates);
             case "JetPlane" -> new JetPlane(nextId++, p_name, p_coordinates);
-            default -> null;
+            default -> throw new InvalidAircraftException("Invalid aircraft type: " + p_type);
         };
 
     }

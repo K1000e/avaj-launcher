@@ -18,23 +18,23 @@ public class JetPlane extends Aircraft {
 
         switch (currentWeather){
             case "SUN":
-                message = "I like sunny day!";
+                message = "Clear skies! Time to push the throttle.";
                 p_latitude = 10;
                 p_height = 2;
 
                 break;
             case "RAIN":
-                message = "It's raining. Better watch out for lightings.";
+                message = "Rain on the runway? Keep your eyes open!";
                 p_latitude = 5;
                 break;
 
             case "FOG":
-                message = "There is so much fog!";
+                message = "I can't see the runway, but I trust my instruments.";
                 p_latitude = 1;
                 break;
 
             case "SNOW":
-                message = "OMG! Winter is coming!";
+                message = "Winter is coming! Let's get out of here.";
                 p_height = -7;
                 break;
 

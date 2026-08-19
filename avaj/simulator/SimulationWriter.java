@@ -1,20 +1,21 @@
 package simulator;
 
+import exceptions.SimulationWriterException;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class SimulationWriter {
     private static SimulationWriter instance;
-    private BufferedWriter writer;
-    private final String fileName = "simulation.txt";
+    private final BufferedWriter writer;
 
     private SimulationWriter() {
+        String fileName = "simulation.txt";
         try {
             this.writer = new BufferedWriter(new FileWriter(fileName, false));
         } catch (IOException e) {
-            System.err.println("Erreur d'initialisation du fichier de simulation : " + e.getMessage());
-            System.exit(1);
+            throw new SimulationWriterException("Unable to create simulation file: " + fileName, e);
         }
     }
 
@@ -30,7 +31,7 @@ public class SimulationWriter {
             this.writer.write(message);
             this.writer.newLine();
         } catch (IOException e) {
-            System.out.println("Erreur d'écriture dans la simulation : " + e.getMessage());
+            throw new SimulationWriterException("Unable to write to simulation file", e);
         }
     }
 
@@ -41,7 +42,7 @@ public class SimulationWriter {
                 this.writer.close();
             }
         } catch (IOException e) {
-            System.out.println("Erreur lors de la fermeture du fichier : " + e.getMessage());
+            throw new SimulationWriterException("Unable to close simulation file", e);
         }
     }
 }

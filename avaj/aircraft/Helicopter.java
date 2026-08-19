@@ -18,23 +18,23 @@ public class Helicopter extends Aircraft {
 
         switch (currentWeather){
             case "SUN":
-                message = "This is hot.";
+                message = "What a beautiful day! These rotors are loving it.";
                 p_longitude = 10;
                 p_height = 2;
                 break;
 
             case "RAIN":
-                message = "I don't like rain!";
+                message = "Rain again? I hope these rotors are waterproof.";
                 p_longitude = 5;
                 break;
 
             case "FOG":
-                message = "There is so much fog!";
+                message = "Too much fog! I'm flying by instinct now.";
                 p_longitude = 1;
                 break;
 
             case "SNOW":
-                message = "My rotor is going to freeze!";
+                message = "My rotors are freezing! This is getting dangerous.";
                 p_height = -12;
                 break;
 

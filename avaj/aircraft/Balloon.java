@@ -18,23 +18,23 @@ public class Balloon extends Aircraft {
 
         switch (currentWeather){
             case "SUN":
-                message = "Let's enjoy the good weather and take some pics.";
+                message = "Perfect weather for a balloon ride! Let's go higher!";
                 p_longitude = 2;
                 p_height = 4;
                 break;
 
             case "RAIN":
-                message = "Damn you rain! You messed up my balloon.";
+                message = "Rain?! I'm a balloon, not a submarine!";
                 p_height = -5;
                 break;
 
             case "FOG":
-                message = "There is so much fog!";
+                message = "I can't see a thing! Are we still flying?";
                 p_height = -3;
                 break;
 
             case "SNOW":
-                message = "It's snowing. We're gonna crash.";
+                message = "Snow?! My balloon is turning into a snowball!";
                 p_height = -15;
                 break;
         }
